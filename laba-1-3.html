@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Практическое занятие №1. Упражнение 3.</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	</style>
+</head>
+
+<body>
+	<h1>Практическое занятие №1. Упражнение 3.</h1>
+
+	<script>
+	"use strict" (function(){
+	var n = 50;
+	while (n>=0) {
+	if ((n <= 10 || n >= 20) && n%10==1)
+		document.write("Остался " + n + " день;<br>");
+    else if ((n <= 10 || n >= 20) && (n%10==2  || n%10==3 || n%10==4)){
+		document.write("Осталось " + n + " дня;<br>");
+	} else {
+		document.write("Осталось " + n + " дней;<br>");
+    };		
+	n = n-1;
+	};
+	}());</script>
+</body>
+</html>

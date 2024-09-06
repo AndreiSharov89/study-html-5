@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Практическое занятие №1. Упражнение 4.</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	</style>
+</head>
+
+<body>
+	<h1>Практическое занятие №1. Упражнение 4.</h1>
+
+	<script>
+	"use strict"; (function(){
+	
+	function NewClass(title, url) {
+        this.title = title; 
+        this.url = url;  
+        this.show = show;
+		function show() {
+            document.write("Title: " + this.title + ' URL: <a href="' + this.url + '">' + this.title + '</a><br>');
+        };
+    }
+	
+	var n = new NewClass("Дзен", "https://ya.ru");
+	var m = new NewClass("YouTube", "https://rutube.ru");
+	n.show();
+	m.show();
+	}());</script>
+</body>
+</html>

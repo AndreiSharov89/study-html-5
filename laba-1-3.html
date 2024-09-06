@@ -13,18 +13,23 @@
 	<h1>Практическое занятие №1. Упражнение 3.</h1>
 
 	<script>
-	"use strict" (function(){
-	var n = 50;
-	while (n>=0) {
+	"use strict"; (function(){
+	
+	function days(n){
+	var result;
 	if ((n <= 10 || n >= 20) && n%10==1)
-		document.write("Остался " + n + " день;<br>");
-    else if ((n <= 10 || n >= 20) && (n%10==2  || n%10==3 || n%10==4)){
-		document.write("Осталось " + n + " дня;<br>");
+		result = ("Остался " + n + " день;<br>");
+    	else if ((n <= 10 || n >= 20) && (n%10==2  || n%10==3 || n%10==4)){
+		result = ("Осталось " + n + " дня;<br>");
 	} else {
-		document.write("Осталось " + n + " дней;<br>");
-    };		
-	n = n-1;
+		result = ("Осталось " + n + " дней;<br>");
+    	};		
+	return result;
 	};
+	
+	var n = prompt("количество дней", 0);
+	document.write(days(n));
+	
 	}());</script>
 </body>
 </html>

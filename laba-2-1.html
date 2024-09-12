@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Практическое занятие №2. Упражнение 1.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript">
+    "use strict";
+	  function changeSize(){
+	  const img = document.getElementById('image');
+	  if (img.style.width == '640px') {
+		  img.style.width = '1280px';
+		  document.getElementById("imgWidth").innerText = '1280px';
+	  }
+	  else {
+		  img.style.width = '640px';
+		  document.getElementById("imgWidth").innerText = '640px';
+	  };
+	};
+	</script>
+  <style>
+	img {
+       width: 640px;
+  }
+	</style>
+</head>
+<body>
+	<h1>Практическое занятие №2. Упражнение 1.</h1>
+	<img id="image" src="apple.jpg" alt="Картинка" onClick="changeSize()" onLoad="changeSize()">
+	<p id="imgWidth">640px</p>
+</body>
+</html>

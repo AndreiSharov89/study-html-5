@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическое занятие №4. Упражнение 1.</title>
+		<script>
+		"use strict";
+        function drawC() {
+            var canvas = document.getElementById('canvas');
+			if (canvas != null) {
+            const ctx = canvas.getContext('2d');
+            var gradient = ctx.createLinearGradient(0, 0, 500, 500);
+            gradient.addColorStop(0, '#b90057');
+            gradient.addColorStop(0.2, '#b90057');
+            gradient.addColorStop(0.5, '#00b97e');
+            gradient.addColorStop(0.65, '#66d323');
+            gradient.addColorStop(0.8, '#ffec00');
+            gradient.addColorStop(1, '#ffec00');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        } else {
+			document.write('Element not found!');
+		}
+		};
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="450"></canvas>
+	<script>drawC()</script>
+</body>
+</html>

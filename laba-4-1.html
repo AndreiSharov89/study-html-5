@@ -1,33 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практическое занятие №4. Упражнение 1.</title>
-		<script>
-		"use strict";
-        function drawC() {
-            var canvas = document.getElementById('canvas');
-			if (canvas != null) {
+	<script src="modernizr-4-1-2.js"></script>
+    <script>
+	function fillGrad() {
+    "use strict";
+    if (Modernizr.canvas) {
+        console.log("Есть поддержка элемента canvas");
+        const canvas = document.getElementById('myGradientCanvas');
+        if (canvas) {
+			console.log("Элемент canvas с id 'myGradientCanvas' присутствует");
             const ctx = canvas.getContext('2d');
-// проверю поддержку градиента позже
-            var gradient = ctx.createLinearGradient(0, 0, 500, 500);
-            gradient.addColorStop(0, '#b90057');
-            gradient.addColorStop(0.2, '#b90057');
-            gradient.addColorStop(0.5, '#00b97e');
-            gradient.addColorStop(0.65, '#66d323');
-            gradient.addColorStop(0.8, '#ffec00');
-            gradient.addColorStop(1, '#ffec00');
+			if (Modernizr.cssgradients) {
+			console.log("Есть поддержка стиля gradient");
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+			gradient.addColorStop(0, '#b90057');
+			gradient.addColorStop(0.2, '#b90057');
+			gradient.addColorStop(0.5, '#00b97e');
+			gradient.addColorStop(0.65, '#66d323');
+			gradient.addColorStop(0.8, '#ffec00');
+			gradient.addColorStop(1, '#ffec00');
             ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);}
+			else {console.log("Нет поддержки стиля gradient");}
+            } else {
+                console.log("Элемент canvas с id 'myGradientCanvas' не найден!");
+            }
         } else {
-			document.write('Element not found!');
-		}
-		};
-    </script>
+            console.log("Нет поддержки элемента canvas");
+        }
+    };
+	</script>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="450"></canvas>
-	<script>drawC()</script>
+    <h2>Практическое занятие №4. Упражнение 1.</h2>
+    <canvas id="myGradientCanvas" width="400" height="300"></canvas>
+	<script>
+	fillGrad();
+    </script>
 </body>
 </html>

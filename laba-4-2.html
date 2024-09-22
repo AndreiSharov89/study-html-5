@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практическое занятие №4. Упражнение 1.</title>
+	<script src="modernizr-4-1-2.js"></script>
+	<script>
+        function svg() {
+            "use strict";
+            // Проверка поддержки SVG embed or object
+            if (Modernizr.svg) {
+                console.log('Браузер поддерживает SVG embed or object');
+				const svg = document.getElementById('svg');
+				if (svg) {
+				console.log('Элемент div ID=svg присутствует');
+				svg.innerHTML += '<embed src="apple.svg" type="image/svg+xml" width="320" height="240" />';
+				svg.innerHTML += '<object data="apple.svg" type="image/svg+xml" width="320" height="240"></object>';
+				svg.innerHTML += '<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg"><circle cx="228" cy="228" r="228" fill="green" /></svg>';
+				} else {console.log('Элемент div ID svg присутствует')}
+            } else {
+                console.log('Браузер НЕ поддерживает SVG embed or object');
+            }
+        };
+    </script>
+    <title>Практическое занятие №4. Упражнение 2.</title>
 </head>
 <body>
-    <h1>Практическое занятие №4. Упражнение 1.</h1>
-    <embed src="apple.svg" type="image/svg+xml" width="320" height="240" />
-    <object data="apple.svg" type="image/svg+xml" width="320" height="240"></object>
-    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="228" cy="228" r="200" fill="green" />
-    </svg>
+    <h1>Практическое занятие №4. Упражнение 2.</h1>
+	<div id="svg"></div>
+	<script>svg()</script>
 </body>
 </html>
